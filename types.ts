@@ -14,6 +14,7 @@ export interface KVAsset {
   campaignType: 'Digital' | 'Traditional';
   category: 'Mobile' | 'Household';
   uploadedDate: string;
+  createdAt?: string; // ISO string for sorting
   thumbnail: string;
   source: string;
   driveLink: string;

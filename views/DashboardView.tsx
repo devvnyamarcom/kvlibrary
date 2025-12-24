@@ -55,6 +55,11 @@ const DashboardView: React.FC<DashboardViewProps> = ({ role, assets, onDetails, 
     if (sourceFilter && asset.source.toLowerCase() !== sourceFilter.toLowerCase()) return false;
 
     return true;
+  }).sort((a, b) => {
+    // Sort Newest to Oldest based on createdAt (ISO string)
+    const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+    const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+    return dateB - dateA;
   });
 
   const handleThumbnailClick = (e: React.MouseEvent, asset: KVAsset) => {
@@ -75,7 +80,7 @@ const DashboardView: React.FC<DashboardViewProps> = ({ role, assets, onDetails, 
             <div className="flex items-center justify-between p-4 border-b border-white/10 bg-black/20">
               <div>
                 <h3 className="text-white font-bold">{previewAsset.name}</h3>
-                <p className="text-xs text-text-muted">ID: {previewAsset.id}</p>
+                {/* ID removed from preview */}
               </div>
               <button
                 onClick={() => setPreviewAsset(null)}
@@ -334,7 +339,7 @@ const DashboardView: React.FC<DashboardViewProps> = ({ role, assets, onDetails, 
                 <tr className="bg-[#482325]">
                   <th className="px-6 py-4 text-xs font-bold uppercase text-[#c99294]">Uploaded</th>
                   <th className="px-6 py-4 text-xs font-bold uppercase text-[#c99294]">Preview</th>
-                  <th className="px-6 py-4 text-xs font-bold uppercase text-[#c99294]">KV Name / ID</th>
+                  <th className="px-6 py-4 text-xs font-bold uppercase text-[#c99294]">KV Name</th>
                   <th className="px-6 py-4 text-xs font-bold uppercase text-[#c99294]">Campaign</th>
                   <th className="px-6 py-4 text-xs font-bold uppercase text-[#c99294]">Product</th>
                   <th className="px-6 py-4 text-xs font-bold uppercase text-[#c99294]">Source</th>
@@ -359,7 +364,6 @@ const DashboardView: React.FC<DashboardViewProps> = ({ role, assets, onDetails, 
                     <td className="px-6 py-4">
                       <div className="flex flex-col cursor-pointer" onClick={() => onDetails(asset)}>
                         <span className="font-bold text-white group-hover:text-primary transition-colors">{asset.name}</span>
-                        <span className="text-xs text-[#c99294]">ID: {asset.id}</span>
                       </div>
                     </td>
                     <td className="px-6 py-4">

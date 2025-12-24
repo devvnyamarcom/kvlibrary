@@ -80,6 +80,7 @@ const App: React.FC = () => {
           campaignType: item.campaign_type,
           category: item.category,
           uploadedDate: new Date(item.uploaded_date).toLocaleDateString(),
+          createdAt: item.created_at || new Date().toISOString(), // Fallback for sorting
           thumbnail: item.thumbnail,
           source: item.source,
           driveLink: item.drive_link
