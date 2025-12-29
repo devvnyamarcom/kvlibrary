@@ -216,7 +216,7 @@ const DashboardView: React.FC<DashboardViewProps> = ({ role, assets, onDetails, 
             <div className="flex flex-col items-center gap-2 w-full max-w-[60px]">
               <span className="text-xs text-white font-bold">{stats.houseCount}</span>
               <div className="w-full bg-[#c99294] rounded-t-lg transition-all duration-1000" style={{ height: `${(stats.houseCount / Math.max(stats.mobileCount + stats.houseCount, 1)) * 100}px` }}></div>
-              <span className="text-[#c99294] text-[10px] font-bold uppercase">House</span>
+              <span className="text-[#c99294] text-[10px] font-bold uppercase">Household</span>
             </div>
           </div>
         </div>
