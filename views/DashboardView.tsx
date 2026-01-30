@@ -174,7 +174,7 @@ const DashboardView: React.FC<DashboardViewProps> = ({ role, assets, onDetails, 
         {/* Campaign Distribution */}
         <div className="rounded-xl bg-[#482325] p-6 shadow-sm border border-white/5 flex flex-col h-full">
           <div className="mb-6">
-            <h3 className="text-white text-lg font-bold leading-tight">Campaign Distribution</h3>
+            <h3 className="text-white text-lg font-bold leading-tight">KV Distribution</h3>
             <p className="text-[#c99294] text-sm">Digital vs Traditional</p>
           </div>
           <div className="flex-1 flex flex-col justify-center gap-6">
@@ -204,7 +204,7 @@ const DashboardView: React.FC<DashboardViewProps> = ({ role, assets, onDetails, 
         {/* Product Focus */}
         <div className="rounded-xl bg-[#482325] p-6 shadow-sm border border-white/5 flex flex-col h-full">
           <div className="mb-6">
-            <h3 className="text-white text-lg font-bold leading-tight">Product Focus</h3>
+            <h3 className="text-white text-lg font-bold leading-tight">Products</h3>
             <p className="text-[#c99294] text-sm">Mobile vs Household</p>
           </div>
           <div className="flex-1 flex items-end justify-around gap-4 px-2 min-h-[140px]">
@@ -224,7 +224,7 @@ const DashboardView: React.FC<DashboardViewProps> = ({ role, assets, onDetails, 
         {/* Source Contribution */}
         <div className="rounded-xl bg-[#482325] p-6 shadow-sm border border-white/5 flex flex-col h-full">
           <div className="mb-6">
-            <h3 className="text-white text-lg font-bold leading-tight">Source Contribution</h3>
+            <h3 className="text-white text-lg font-bold leading-tight">KV Contribution</h3>
             <p className="text-[#c99294] text-sm">HQ, Area, Region Breakdown</p>
           </div>
           <div className="flex-1 flex flex-col justify-center gap-4">
